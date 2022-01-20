@@ -1,35 +1,88 @@
 
 * {
     font-family: 'Mochiy Pop P One', sans-serif;
-    background-color: blueviolet;
+    /*background-color: lightblue;*/
     margin: 0;
 }
 
-.navbar {
-    height: 50px;
+/* format logo image */
+.icon img {
+    height: 40px;
+    width: auto;
 }
 
+/* increase height when hovering over it */
+.icon img:hover {
+    height: 45px;
+    width: auto;
+}
+
+/* icon spacing */
+.icon {
+    padding-right: 0.75rem;
+}
+
+/* display the fullscreen bar and position links */
 .nav_container {
-    max-width: 100%;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    background-color: darkblue;
+    align-items: center;
+    /*justify-content: space-between;*/
 }
 
-nav {
-    float: right;
+/* turn off default formating for links */
+a {
+    text-decoration: none;
 }
 
-nav ul {
+/* default look of main navbar items */
+ul {
+    background-color: darkblue;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding-left: 0;
 }
 
-nav ul li {
+/* set the default look of each item and box around it */
+li {
+    color: white;
+    background: darkblue;
+    display: block;
     float: left;
+    padding: 1rem;
     position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
 }
 
-nav ul li a,
-nav ul li a:visited {
+/* default link text color */
+li a {
+    color: white;
+}
 
+/* set the hover effect for list items */
+li:hover {
+    background-color: rgb(0, 0, 92);
+    cursor: pointer;
+}
+
+/* formating of the drop down and setting it hidden by default */
+ul li ul {
+    background-color: darkblue;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5.5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+
+/* making drop down visible when hovering over it */
+ul li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+    display: block;
 }
